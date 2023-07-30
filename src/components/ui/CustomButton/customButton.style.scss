@@ -1,0 +1,23 @@
+@import "../../../assets/styles/vars.scss";
+
+.button {
+  background: $accentOrange;
+  padding: 12px 48px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  height: auto;
+  border: none;
+  margin: 0px auto;
+  &:hover {
+    border: none;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 15px;
+    color: #fff;
+  }
+}
