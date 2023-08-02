@@ -69,6 +69,10 @@
     height: 62px;
   }
 
+  &__bg {
+    z-index: -1;
+  }
+
   @media(max-width: 500px) {
     &__logo {
       &--desktop {

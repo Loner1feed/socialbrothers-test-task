@@ -43,7 +43,7 @@ export const Header = () => {
         </div>
       </Container>
 
-      <ImgBg imgPath={bg} />
+      <ImgBg imgPath={bg} customClassName="header__bg" />
     </header>
   )
 }

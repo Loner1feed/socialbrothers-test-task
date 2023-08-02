@@ -1,0 +1,65 @@
+@import "../../../assets/styles/vars.scss";
+
+.pagination {
+  &.ant-pagination {
+    & .ant-pagination-item {
+      border: none;
+      height: 25px;
+      // width: 16px;
+      // min-width: 0;
+      line-height: 25px;
+      border-radius: 13px;
+      font-size: 12px;
+      margin-inline-end: 2px;
+      &.ant-pagination-item-active {
+        background: #E7E7E7;
+        font-weight: 700;
+        font-size: 14px;
+        width: 34px;
+        a {
+          color: $fontBlack;
+        }
+      }
+    }
+
+    .ant-pagination-next {
+      height: 25px;
+    }
+
+    .ant-pagination-prev {
+      display: none;
+    }
+
+    .ant-pagination-jump-next,
+    .ant-pagination-jump-prev {
+      margin-right: 3px;
+      width: 25px;
+      min-width: 25px;
+      &:hover {
+        color: $accentOrange;
+      }
+    }
+  }
+
+  &__nextBtn {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 19px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 25px;
+    span {
+      color: $accentOrange;
+    }
+    svg {
+      margin-left: 8px;
+      path {
+        fill: $accentOrange;
+      }
+    }
+  }
+}

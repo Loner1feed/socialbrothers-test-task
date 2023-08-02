@@ -1,0 +1,26 @@
+.blogSkeleton {
+  &__item {
+    &.ant-skeleton {
+      width: 100%;
+      & .ant-skeleton-image {
+        height: 220px;
+        width: 100%;
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__pagination {
+    &.ant-skeleton {
+      padding-top: 24px;
+      display: flex;
+      justify-content: center;
+      .ant-skeleton-input {
+        height: 32px;
+        width: 280px;
+      }
+    }
+  }
+}

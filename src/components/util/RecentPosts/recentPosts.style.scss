@@ -1,0 +1,15 @@
+.recentPosts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: repeat(auto-fit, 220px);
+    grid-gap: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    overflow-x: hidden;
+    max-height: 548px;
+  }
+}

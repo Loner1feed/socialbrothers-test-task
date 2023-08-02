@@ -1,6 +1,7 @@
 @import "../../../assets/styles/vars.scss";
 
 .button {
+  box-sizing: border-box;
   background: $accentOrange;
   padding: 12px 48px;
   border-radius: 20px;

@@ -8,26 +8,29 @@ import { ApiService } from '../../../services/ApiService';
 import { CustomFile } from '../../ui/CustomInputs/CustomFile';
 import { CustomTextArea } from '../../ui/CustomInputs/CustomTextArea';
 import { CustomButton } from '../../ui/CustomButton/CustomButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPost } from '../../../store/posts/posts.thunks';
+import { getRecentState } from '../../../store/posts/posts.selectors';
 
 export const CreatePostForm = () => {
+
+  const dispatch = useDispatch();
 
   const [categories, setCategories] = useState([]);
 
   const [form] = Form.useForm();
 
-  const onFinish = ({title, content, category, image}) => {
-    
+  const { isLoading } = useSelector(getRecentState);
+
+  const onFinish = ({ title, content, category, image }) => {
+    console.log(image)
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
     formData.append("category_id", category);
     formData.append("image", image[0].originFileObj);
 
-    ApiService.setPost(formData).then((res) => {
-      message.success("Bericht succesvol gemaakt")
-    }).catch(() => {
-      message.error("Fout opgetreden")
-    })
+    dispatch(setPost(formData));
   }
 
   useEffect(() => {
@@ -38,12 +41,10 @@ export const CreatePostForm = () => {
           value: el.id
         })));
       }
-    })
+    }).catch(() => {
+      message.error("error");
+    });
   }, []);
-
-  useEffect(() => {
-    console.log(categories)
-  }, [categories]);
 
   return (
     <ContentCard>
@@ -89,11 +90,11 @@ export const CreatePostForm = () => {
             label="Bericht"
             rules={[{ required: true, message: "Bericht is vereist" }]}
           >
-            <CustomTextArea />
+            <CustomTextArea style={{ minHeight: "215px" }} />
           </Form.Item>
 
           <Form.Item>
-            <CustomButton htmlType="submit">Bericht aanmaken</CustomButton>
+            <CustomButton disabled={isLoading} htmlType="submit">Bericht aanmaken</CustomButton>
           </Form.Item>
         </Form>
       </div>
