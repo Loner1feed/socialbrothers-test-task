@@ -29,15 +29,11 @@ export const RecentPosts = () => {
     dispatch(getRecentPosts(params));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
-
-  useEffect(() => {
-    console.log(content);
-  }, [content]);
   
   return (
     <ContentCard customClassName="recentPosts">
       <div className="recentPosts__grid">
-        {content?.data.map((el) => <PostCard data={el} />)}
+        {content?.data.map((el) => <PostCard key={el.id} data={el} />)}
       </div>
 
       <CustomButton disabled={isLoading} style={{ marginTop: "auto" }} onClick={showMoreHandler}>Laad meer</CustomButton>

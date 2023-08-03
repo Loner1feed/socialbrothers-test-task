@@ -23,7 +23,6 @@ export const CreatePostForm = () => {
   const { isLoading } = useSelector(getRecentState);
 
   const onFinish = ({ title, content, category, image }) => {
-    console.log(image)
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);

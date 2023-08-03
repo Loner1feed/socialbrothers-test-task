@@ -57,8 +57,7 @@ export const PostsSlice = createSlice({
     },
     [setPost.fulfilled]: (state, action) => {
       if (state.recent.content.data) {
-        // console.log([...state.recent.content.data.slice(0, -1), action.payload])
-        console.log(state.recent.content.data.unshift(action.payload));
+        state.recent.content.data.unshift(action.payload);
       }
       
       state.recent.isLoading = false;

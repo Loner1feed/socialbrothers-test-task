@@ -21,7 +21,7 @@ export const Header = () => {
   }, [pathname]);
 
   const renderNavLinks = () => {
-    return appRoutes.map((el) => <NavLink to={el.path} className={({ isActive }) => (isActive ? "active" : "")}>{el.linkTitle}</NavLink>)
+    return appRoutes.map((el) => <NavLink key={el.path} to={el.path} className={({ isActive }) => (isActive ? "active" : "")}>{el.linkTitle}</NavLink>)
   }
 
   return (

@@ -7,7 +7,6 @@ import { HomeSkeleton } from '../components/ui/SkeletonLoaders/HomeSkeleton'
 
 export const IndexLayout = () => {
   const { pathname } = useLocation();
-  console.log(pathname)
   const renderFallback = () => {
     if (pathname === "/blog") return <BlogSkeleton />
     else if (pathname === "/") return <HomeSkeleton />
